@@ -45,7 +45,7 @@
           <th>Test description</th>
           <th>Importance</th>
           <th>Service(s)</th>
-          <th>Instance(s)</th>
+          <!-- <th>Instance(s)</th> -->
           <th></th>
         </tr>
       </thead>
@@ -90,7 +90,7 @@
             <span class="label label-warning">No service</span>
             {% endif %}
           </td>
-          <td>
+          <!-- <td>
             {% for instance in check.instance_set.all %}
             <a href="{% url "instance" pk=instance.id %}">{{ instance.name }}</a>
             {% if forloop.last %}
@@ -101,7 +101,7 @@
             {% if not check.instance_set.all %}
             <span class="label label-warning">No instance</span>
             {% endif %}
-          </td>
+          </td> -->
           <td class="text-right"><a class="btn btn-xs" href="{% if check.polymorphic_ctype.model == 'graphitestatuscheck' %}{% url "update-graphite-check" pk=check.id %}{% elif check.polymorphic_ctype.model == 'httpstatuscheck' %}{% url "update-http-check" pk=check.id %}{% elif check.polymorphic_ctype.model == 'icmpstatuscheck' %}{% url "update-icmp-check" pk=check.id %}{% elif check.polymorphic_ctype.model == 'jenkinsstatuscheck' %}{% url "update-jenkins-check" pk=check.id %}
               {% elif check.edit_url_name %}
                 {% url check.edit_url_name pk=check.id %}
