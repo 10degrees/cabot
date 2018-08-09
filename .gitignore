@@ -2,12 +2,10 @@
 dev.db
 venv/*
 backups/*
-static/
 cabot/.collectstatic/
 node_modules/*
 .python-eggs/*
 cabot.egg-info
-cabot/static/
 .env
 .DS_Store
 celerybeat-schedule
