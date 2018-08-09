@@ -2,13 +2,13 @@
 {% block header_navbar_menu %}
   {% if user.is_authenticated %}
   <ul class="nav navbar-nav">
-    <li>
+    <li class="instances">
       <a href="{% url 'instances' %}"><i class="fa fa-desktop"></i> Instances</a>
     </li>
-    <li>
+    <li class="services">
       <a href="{% url 'services' %}"><i class="fa fa-gears"></i> Services</a>
     </li>
-    <li>
+    <li class="checks">
       <a href="{% url 'checks' %}"><i class="fa fa-cog"></i> Checks</a>
     </li>
     <ul class="nav navbar-nav navbar-left">
@@ -22,13 +22,13 @@
             <a href="{% url 'create-instance' %}"><i class="fa fa-desktop"></i> Instance</a>
           </li>
           <li class="divider"></li>
-          <li>
+          <li class="graphite">
             <a href="{% url 'create-graphite-check' %}?service={{ service.id }}&instance={{ instance.id }}" class=""><i class="glyphicon glyphicon-signal" title="Add new metric check"></i> Graphite check</a>
           </li>
           <li>
             <a href="{% url 'create-http-check' %}?service={{ service.id }}&instance={{ instance.id }}" class="" title="Add new HTTP check"><i class="glyphicon glyphicon-arrow-up"></i> HTTP check</a>
           </li>
-          <li>
+          <li class="jenkins">
             <a href="{% url 'create-jenkins-check' %}?service={{ service.id }}&instance={{ instance.id }}" class="" title="Add new Jenkins check"><i class="glyphicon glyphicon-ok"></i> Jenkins check</a>
           </li>
           <li>
